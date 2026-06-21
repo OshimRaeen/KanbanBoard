@@ -3,7 +3,7 @@ const http = require("http");
 const { Server } = require("socket.io");
 const { TaskStore } = require("./taskStore");
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 const app = express();
 const server = http.createServer(app);

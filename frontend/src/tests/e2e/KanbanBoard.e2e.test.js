@@ -4,7 +4,7 @@ import { test, expect } from "@playwright/test";
  * These tests run against the real app in a real browser, talking to the
  * real backend over an actual WebSocket connection (no mocks). They
  * require the backend (npm run dev / node server.js in /backend) to be
- * running on port 5000 alongside the frontend dev server Playwright
+ * running on port 5001 alongside the frontend dev server Playwright
  * starts automatically - see the project README for the two-terminal
  * setup used to run these.
  */

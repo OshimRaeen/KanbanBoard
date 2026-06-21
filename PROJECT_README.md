@@ -16,7 +16,7 @@ You need two terminals — the backend and frontend are separate processes.
 # Terminal 1 - backend
 cd backend
 npm install
-npm run dev          # nodemon, runs on http://localhost:5000
+npm run dev          # nodemon, runs on http://localhost:5001
 
 # Terminal 2 - frontend
 cd frontend
@@ -35,7 +35,7 @@ cd backend && npm test
 # Frontend unit + integration tests
 cd frontend && npm test
 
-# Frontend E2E tests (requires the backend running on :5000 separately,
+# Frontend E2E tests (requires the backend running on :5001 separately,
 # Playwright will start the frontend dev server itself)
 cd frontend && npx playwright install chromium   # first time only
 cd frontend && npm run test:e2e
