@@ -78,6 +78,7 @@ function startTestServer() {
     });
   });
 }
+const SERVER_URL = process.env.SERVER_URL || `http://localhost:${port}`;
 
 describe("WebSocket task events", () => {
   let httpServer;
@@ -99,8 +100,8 @@ describe("WebSocket task events", () => {
     clientA?.close();
     clientB?.close();
 
-    clientA = Client(`http://localhost:${port}`);
-    clientB = Client(`http://localhost:${port}`);
+    clientA = Client(SERVER_URL);
+    clientB = Client(SERVER_URL);
 
     await Promise.all([
       new Promise((resolve) => clientA.on("connect", resolve)),
@@ -109,7 +110,7 @@ describe("WebSocket task events", () => {
   });
 
   test("a newly connected client receives the current task list via sync:tasks", async () => {
-    const freshClient = Client(`http://localhost:${port}`);
+    const freshClient = Client(SERVER_URL);
     const tasks = await new Promise((resolve) => {
       freshClient.once("sync:tasks", resolve);
     });
